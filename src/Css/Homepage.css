@@ -1,0 +1,29 @@
+/* Homepage.css */
+
+/* Reset margins so the page goes edge-to-edge */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6; /* A soft light grey background */
+}
+
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the page takes up the full screen height */
+}
+
+.content {
+  flex: 1; /* Pushes any footer to the bottom if you add one later */
+  padding: 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the content horizontally */
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
