@@ -1,0 +1,23 @@
+/* Footer Section */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 9%;
+  background: var(--second-bg-color);
+}
+
+.footer .social a {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-right: 1.5rem;
+}
+
+.footer .social a:hover {
+    color: var(--main-color);
+}
+
+.copyright {
+  font-size: 1.6rem;
+}

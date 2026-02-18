@@ -1,13 +1,13 @@
-// TopBar.jsx
-import '../Css/TopBar.css'; // Optional: if you want specific styles for the bar
+import '../../Css/TopBar.css';
 
 function TopBar() {
   return (
     <nav className="top-bar">
-      <div className="logo">Patrick</div>
+      <div className="logo">Portfolio</div>
       <ul className="nav-links">
         <li>Home</li>
-        <li>About</li>
+        <li>School Projects</li>
+        <li>Work Experience</li>
         <li>Contact</li>
       </ul>
     </nav>

@@ -1,7 +1,8 @@
+/* src/App.css */
 #root {
-  max-width: 2040px;
-  margin: 0 auto;
-  padding: 0rem;
+  width: 100%; /* Ensure it spans full width */
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
