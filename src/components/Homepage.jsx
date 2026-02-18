@@ -1,44 +1,96 @@
-// Homepage.jsx
+// src/components/Homepage.jsx
 import '../Css/Homepage.css';
 import TopBar from './partials/TopBar';
 import Footer from './partials/Footer';
+import backendImg from '../img/backend.jpg';
 
 function Homepage() {
   return (
     <div className="homepage-container">
-      {/* TopBar replaces the original <header> and <nav> logic */}
       <TopBar />
 
       <main className="content">
-        
-        {/* Home Section */}
+        {/* Home Section Re-styled to match reference */}
         <section className="home" id="home">
-          <div className="home-img">
-            <img src="/img/backend.jpg" alt="profile image" />
-          </div>
-
           <div className="home-content">
-            <h3>Hello guys</h3>
-            <h3>I'm John Patrick Ignacio</h3>
-            <h3>I'm an <span className="multiple-text">IT Student</span></h3>
+            <span className="software-label">Software Developer</span>
+            <h1>Hello I'm <br /><span className="name-highlight">John Patrick Ignacio</span></h1>
             <p>
-              An active and responsible college undergraduate seeking an opportunity where I could develop and
-              challenge my abilities to become a professional. Reliable and flexible worker with pleasing personality,
-              who can work independently and along with teams.
+              I excel at crafting elegant digital experiences and I am proficient in various 
+              programming languages and technologies.
             </p>
 
-            <div className="social-media">
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i className='bx bxl-linkedin-square'></i></a>
-              <a href="https://www.github.com/" target="_blank" rel="noopener noreferrer"><i className='bx bxl-github'></i></a>
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i className='bx bxl-instagram'></i></a>
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i className='bx bxl-facebook'></i></a>
-              <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i className='bx bxl-twitter'></i></a>
+            <div className="cta-container">
+              <a href="#" className="btn-outline">
+                DOWNLOAD CV <i className='bx bx-download'></i>
+              </a>
+              <div className="social-media-minimal">
+                <a href="#"><i className='bx bxl-github'></i></a>
+                <a href="#"><i className='bx bxl-linkedin'></i></a>
+                <a href="#"><i className='bx bxl-youtube'></i></a>
+                <a href="#"><i className='bx bxl-twitter'></i></a>
+              </div>
             </div>
-            <a href="#" className="btn">Download CV</a>
+          </div>
+
+          <div className="home-img-container">
+            <div className="img-border-wrapper">
+              {/* SVG for the rotating dashed circle */}
+              <svg className="rotating-svg" viewBox="0 0 506 506" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle 
+                  cx="253" 
+                  cy="253" 
+                  r="250" 
+                  stroke="#00ff99" 
+                  strokeWidth="4" 
+                  strokeLinecap="round" 
+                  /* Pattern: Long Dash (40), Gap (12), Short Dash (10), Gap (12) */
+                  strokeDasharray="50 40 10 40" 
+                  className="rotating-circle"
+                />
+              </svg>
+              
+              {/* The Profile Image */}
+              <div className="inner-img">
+                <img src={backendImg} alt="profile" />
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* About Section */}
+        {/* Stats Section inspired by reference image */}
+        <div className="stats-container">
+          <div className="stat-item">
+            <h2>3</h2>
+            <p>Years of <br />experience</p>
+          </div>
+          <div className="stat-item">
+            <h2>21</h2>
+            <p>Projects <br />completed</p>
+          </div>
+          <div className="stat-item">
+            <h2>7</h2>
+            <p>Technologies <br />mastered</p>
+          </div>
+          <div className="stat-item">
+            <h2>408</h2>
+            <p>Code <br />commits</p>
+          </div>
+        </div>
+
+        {/* Keep existing About, Favorites, Skills, etc. below */}
+        <section className="about" id="about">
+          <div className="about-content">
+            <h2 className="heading">About <span>Me</span></h2>
+            <h3>I'm a <span>Backend Developer</span></h3>
+            <p>I'm Currently in 3rd year of Bachelor of Science in Information Technology</p>
+            <a href="/aboutme" className="btn-outline">Read More</a>
+          </div>
+          <div className="about-img">
+            <img src="/img/backend.jpg" alt="about Image" />
+          </div>
+        </section>
+                {/* About Section */}
         <section className="about" id="about">
           <div className="about-content">
             <h2 className="heading">About <span>Me</span></h2>
@@ -146,7 +198,6 @@ function Homepage() {
             <button type="submit" className="btn">Submit</button>
           </form>
         </section>
-
       </main>
       <Footer />
     </div>
