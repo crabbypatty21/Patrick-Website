@@ -148,6 +148,7 @@ function Homepage() {
         </section>
 
       </main>
+      <Footer />
     </div>
   );
 }
