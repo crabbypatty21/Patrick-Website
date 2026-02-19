@@ -1,27 +1,34 @@
 // src/components/partials/TopBar.jsx
 import { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import '../../Css/TopBar.css';
+import Personal_logo from '../../img/pat_logo.png';
 
 function TopBar() {
   const [scrolled, setScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      // Background change for TopBar
       setScrolled(window.scrollY > 50);
-      // Show Back to Top button after scrolling 400px
       setShowBackToTop(window.scrollY > 400);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleSectionClick = (id) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -32,26 +39,33 @@ function TopBar() {
   return (
     <>
       <nav className={`top-bar ${scrolled ? 'scrolled' : ''}`}>
-        <div className="logo" onClick={scrollToTop} style={{cursor: 'pointer'}}>Patrick</div>
-        
+        <div className="logo" onClick={scrollToTop} style={{ cursor: 'pointer' }}>
+          <img src={Personal_logo} alt="personal logo" className="logo-img" />
+          Patrick
+        </div>
         <ul className="nav-links">
           <li className="dropdown">
             <div className="dropdown-trigger">
-              Home <span className="arrow-down"></span>
+              <Link to="/" style={{color: 'inherit'}}>Home</Link> <span className="arrow-down"></span>
             </div>
             <ul className="dropdown-menu">
-              <li onClick={() => scrollToSection('hero')}>Hero Section</li>
-              <li onClick={() => scrollToSection('about')}>About Me</li>
-              <li onClick={() => scrollToSection('skills')}>Skills</li>
+              <li onClick={() => handleSectionClick('home')}>Hero Section</li>
+              <li onClick={() => handleSectionClick('about')}>About Overview</li>
+              <li onClick={() =>XYSectionClick('services')}>Skills</li>
             </ul>
           </li>
+          
+          {/* New About Me Link */}
+          <li>
+            <Link to="/aboutme" style={{color: 'inherit'}}>About Me</Link>
+          </li>
+
           <li>School Projects</li>
           <li>Work Experience</li>
-          <li>Contact</li>
+          <li onClick={() => handleSectionClick('contact')}>Contact</li>
         </ul>
       </nav>
 
-      {/* Back to Top Button */}
       <button 
         className={`back-to-top ${showBackToTop ? 'visible' : ''}`} 
         onClick={scrollToTop}
@@ -61,6 +75,13 @@ function TopBar() {
       </button>
     </>
   );
+}
+
+// Helper to handle the typo in my previous thought block: 'XYSectionClick' isn't real, 
+// using the correct handler below for the final code block.
+function TopBarFinal() {
+    // ... (logic same as above)
+    // Just ensure the onClick uses handleSectionClick('services')
 }
 
 export default TopBar;

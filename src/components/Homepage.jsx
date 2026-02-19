@@ -1,4 +1,5 @@
 // src/components/Homepage.jsx
+import { Link } from 'react-router-dom';
 import '../Css/Homepage.css';
 import TopBar from './partials/TopBar';
 import Footer from './partials/Footer';
@@ -10,7 +11,7 @@ function Homepage() {
       <TopBar />
 
       <main className="content">
-        {/* Home Section Re-styled to match reference */}
+        {/* Hero Section */}
         <section className="home" id="home">
           <div className="home-content">
             <span className="software-label">Software Developer</span>
@@ -35,22 +36,9 @@ function Homepage() {
 
           <div className="home-img-container">
             <div className="img-border-wrapper">
-              {/* SVG for the rotating dashed circle */}
               <svg className="rotating-svg" viewBox="0 0 506 506" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle 
-                  cx="253" 
-                  cy="253" 
-                  r="250" 
-                  stroke="#00ff99" 
-                  strokeWidth="4" 
-                  strokeLinecap="round" 
-                  /* Pattern: Long Dash (40), Gap (12), Short Dash (10), Gap (12) */
-                  strokeDasharray="50 40 10 40" 
-                  className="rotating-circle"
-                />
+                <circle cx="253" cy="253" r="250" stroke="#00ff99" strokeWidth="4" strokeLinecap="round" strokeDasharray="50 40 10 40" className="rotating-circle" />
               </svg>
-              
-              {/* The Profile Image */}
               <div className="inner-img">
                 <img src={backendImg} alt="profile" />
               </div>
@@ -58,64 +46,28 @@ function Homepage() {
           </div>
         </section>
 
-        {/* Stats Section inspired by reference image */}
+        {/* Stats Section */}
         <div className="stats-container">
-          <div className="stat-item">
-            <h2>3</h2>
-            <p>Years of <br />experience</p>
-          </div>
-          <div className="stat-item">
-            <h2>21</h2>
-            <p>Projects <br />completed</p>
-          </div>
-          <div className="stat-item">
-            <h2>7</h2>
-            <p>Technologies <br />mastered</p>
-          </div>
-          <div className="stat-item">
-            <h2>408</h2>
-            <p>Code <br />commits</p>
-          </div>
+          <div className="stat-item"><h2>3</h2><p>Years of <br />experience</p></div>
+          <div className="stat-item"><h2>21</h2><p>Projects <br />completed</p></div>
+          <div className="stat-item"><h2>7</h2><p>Technologies <br />mastered</p></div>
+          <div className="stat-item"><h2>408</h2><p>Code <br />commits</p></div>
         </div>
 
-        {/* Keep existing About, Favorites, Skills, etc. below */}
+        {/* UPDATED About Section: Overview Only, No Image */}
         <section className="about" id="about">
           <div className="about-content">
             <h2 className="heading">About <span>Me</span></h2>
             <h3>I'm a <span>Backend Developer</span></h3>
-            <p>I'm Currently in 3rd year of Bachelor of Science in Information Technology</p>
-            <a href="/aboutme" className="btn-outline">Read More</a>
+            <p>I'm Currently in 3rd year of Bachelor of Science in Information Technology. I have a passion for building robust applications and solving real-world problems.</p>
+            
+            {/* Link to new page */}
+            <Link to="/aboutme" className="btn-outline" style={{marginTop: '20px', display: 'inline-block'}}>
+              Read More
+            </Link>
           </div>
-          <div className="about-img">
-            <img src="/img/backend.jpg" alt="about Image" />
-          </div>
-        </section>
-                {/* About Section */}
-        <section className="about" id="about">
-          <div className="about-content">
-            <h2 className="heading">About <span>Me</span></h2>
-            <h3>I'm a <span>Backend Developer</span></h3>
-            <p>I'm Currently in 3rd year of Bachelor of Science in Information Technology</p>
-            <a href="/aboutme" className="btn">Read More</a>
-          </div>
-          <div className="about-img">
-            <img src="/img/backend.jpg" alt="about Image" />
-          </div>
-
-          <div className="accordion">
-            <div className="accordion-item">
-              <button className="accordion-button">Hobbies</button>
-              <div className="content">
-                <p>● Basketball<br />● Gaming<br />● Watching Movies<br />● Playing Guitar<br />● Listening to Music</p>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <button className="accordion-button">Personal Info</button>
-              <div className="content">
-                <p>● Name: Patrick<br />● Age: 20<br />● Location: Philippines</p>
-              </div>
-            </div>
-          </div>
+          
+          {/* IMAGE REMOVED HERE */}
         </section>
 
         {/* Favorites Section */}
@@ -141,28 +93,13 @@ function Homepage() {
           </div>
         </section>
 
-        {/* Skills/Services Section */}
+        {/* Skills Section */}
         <section className="services" id="services">
           <h2 className="heading">My <span>Skills</span></h2>
           <div className="services-container">
-            <div className="services-box">
-              <i className="bx bx-code"></i>
-              <h3>Web Development</h3>
-              <p>I can create simple web projects for you</p>
-              <a href="/webdevelopment" className="btn">Read More</a>
-            </div>
-            <div className="services-box">
-              <i className="bx bx-palette"></i>
-              <h3>UI/UX DESIGN</h3>
-              <p>I can design User Interfaces and other Visuals</p>
-              <a href="/uiuxdesign" className="btn">Read More</a>
-            </div>
-            <div className="services-box">
-              <i className="bx bxl-android"></i>
-              <h3>Game Development</h3>
-              <p>I can develop simple game base on the clients preferences</p>
-              <a href="/gamedevelopment" className="btn">Read More</a>
-            </div>
+            <div className="services-box"><i className="bx bx-code"></i><h3>Web Development</h3><p>I can create simple web projects for you</p><a href="#" className="btn">Read More</a></div>
+            <div className="services-box"><i className="bx bx-palette"></i><h3>UI/UX DESIGN</h3><p>I can design User Interfaces and other Visuals</p><a href="#" className="btn">Read More</a></div>
+            <div className="services-box"><i className="bx bxl-android"></i><h3>Game Development</h3><p>I can develop simple game base on the clients preferences</p><a href="#" className="btn">Read More</a></div>
           </div>
         </section>
 
@@ -174,9 +111,7 @@ function Homepage() {
               <div className="Activities-box" key={num}>
                 <i className='bx bx-task'></i>
                 <h3>Activity#{num}</h3>
-                <a href={`https://ignacioact${num}.netlify.app`} target="_blank" rel="noopener noreferrer" className="btn">
-                  Go to Activity#{num}
-                </a>
+                <a href={`https://ignacioact${num}.netlify.app`} target="_blank" rel="noopener noreferrer" className="btn">Go to Activity#{num}</a>
               </div>
             ))}
           </div>
@@ -186,18 +121,13 @@ function Homepage() {
         <section className="contact" id="contact">
           <h2 className="heading">Contact <span>Me</span></h2>
           <form action="#" onSubmit={(e) => e.preventDefault()}>
-            <div className="input-box">
-              <input type="text" placeholder="Full Name" />
-              <input type="email" placeholder="Email Address" />
-            </div>
-            <div className="input-box">
-              <input type="number" placeholder="Phone Number" />
-              <input type="text" placeholder="Email Subject" />
-            </div>
+            <div className="input-box"><input type="text" placeholder="Full Name" /><input type="email" placeholder="Email Address" /></div>
+            <div className="input-box"><input type="number" placeholder="Phone Number" /><input type="text" placeholder="Email Subject" /></div>
             <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
             <button type="submit" className="btn">Submit</button>
           </form>
         </section>
+
       </main>
       <Footer />
     </div>

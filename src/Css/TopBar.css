@@ -25,6 +25,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
+  margin-top: 30px;
 }
 
 .nav-links {
@@ -113,6 +114,13 @@
   color: #0ef;
 }
 
+
+.logo-img {
+  height: 32px; /* Adjust this value as needed */
+  width: auto;
+  vertical-align: middle;
+  margin-right: 10px;
+}
 
 /* --- Back to Top Button --- */
 

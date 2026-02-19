@@ -1,12 +1,21 @@
-import Homepage from './components/Homepage.jsx'
-import './App.css'
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from './components/Homepage.jsx';
+import AboutMe from './components/AboutMe.jsx';
+import ScrollToTop from './components/partials/ScrollToTop.jsx'; // 1. Import it here
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <Homepage />
-    </div>
+    <Router>
+      <ScrollToTop /> {/* 2. Add it here, inside Router but above Routes */}
+      
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/aboutme" element={<AboutMe />} />
+      </Routes>
+    </Router>
   )
 }
 
-export default App
+export default App;

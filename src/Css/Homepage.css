@@ -199,6 +199,11 @@ span { color: var(--main-color); }
   object-fit: cover;
 }
 
+/* Automatically colors every even section (2nd, 4th, 6th...) */
+section:nth-of-type(even) {
+  background: var(--second-bg-color);
+}
+
 /* Keyframe for the rotation */
 @keyframes rotateBorder {
   from {
