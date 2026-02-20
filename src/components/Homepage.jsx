@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import '../Css/Homepage.css';
 import TopBar from './partials/TopBar';
 import Footer from './partials/Footer';
+
+// import images cos it dont work directly
 import backendImg from '../img/backend.jpg';
 
 function Homepage() {
@@ -14,11 +16,10 @@ function Homepage() {
         {/* Hero Section */}
         <section className="home" id="home">
           <div className="home-content">
-            <span className="software-label">Software Developer</span>
+            <span className="software-label">Web & Game Developer</span>
             <h1>Hello I'm <br /><span className="name-highlight">John Patrick Ignacio</span></h1>
             <p>
-              I excel at crafting elegant digital experiences and I am proficient in various 
-              programming languages and technologies.
+              I am knowledgeable at Game Development using Unreal engine Blueprints
             </p>
 
             <div className="cta-container">
@@ -26,10 +27,10 @@ function Homepage() {
                 DOWNLOAD CV <i className='bx bx-download'></i>
               </a>
               <div className="social-media-minimal">
-                <a href="#"><i className='bx bxl-github'></i></a>
-                <a href="#"><i className='bx bxl-linkedin'></i></a>
-                <a href="#"><i className='bx bxl-youtube'></i></a>
-                <a href="#"><i className='bx bxl-twitter'></i></a>
+                <a href="https://github.com/crabbypatty21" target="_blank" rel="noopener noreferrer"><i className='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/john-patrick-ignacio-4804802b5/" target="_blank" rel="noopener noreferrer"><i className='bx bxl-linkedin'></i></a>
+                <a href="https://www.instagram.com/pat1221_/" target="_blank" rel="noopener noreferrer"><i className='bx bxl-instagram'></i></a>
+                <a href="https://www.facebook.com/Jhnpatrickignacio/" target="_blank" rel="noopener noreferrer"><i className='bx bxl-facebook'></i></a>
               </div>
             </div>
           </div>
@@ -37,7 +38,7 @@ function Homepage() {
           <div className="home-img-container">
             <div className="img-border-wrapper">
               <svg className="rotating-svg" viewBox="0 0 506 506" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="253" cy="253" r="250" stroke="#00ff99" strokeWidth="4" strokeLinecap="round" strokeDasharray="50 40 10 40" className="rotating-circle" />
+                <circle cx="253" cy="253" r="250" stroke="#2AAA8A" strokeWidth="4" strokeLinecap="round" strokeDasharray="50 40 10 40" className="rotating-circle" />
               </svg>
               <div className="inner-img">
                 <img src={backendImg} alt="profile" />
@@ -54,42 +55,91 @@ function Homepage() {
           <div className="stat-item"><h2>408</h2><p>Code <br />commits</p></div>
         </div>
 
-        {/* UPDATED About Section: Overview Only, No Image */}
+        {/* UPDATED About Section: Two-Column Layout with Image */}
         <section className="about" id="about">
-          <div className="about-content">
-            <h2 className="heading">About <span>Me</span></h2>
-            <h3>I'm a <span>Backend Developer</span></h3>
-            <p>I'm Currently in 3rd year of Bachelor of Science in Information Technology. I have a passion for building robust applications and solving real-world problems.</p>
+          <div className="about-container">
             
-            {/* Link to new page */}
-            <Link to="/aboutme" className="btn-outline" style={{marginTop: '20px', display: 'inline-block'}}>
-              Read More
-            </Link>
+            {/* Left Column: Text and Buttons */}
+            <div className="about-content">
+              <h2 className="heading">About <span>Me</span></h2>
+              <h3>I'm a <span>4th Year BSIT College Student</span></h3>
+              <p>
+                I can work on both frontend and backend development, but I’ve had more exposure to backend development. While I’m still growing and refining my skills, most of my experience so far is on the backend side.
+              </p>
+              
+              <div className="button-group" style={{ marginTop: '20px' }}>
+                {/* Link to new page */}
+                <Link to="/aboutme" className="btn-solid">
+                  Read More
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Profile Image */}
+            <div className="about-img">
+              {/* Replace 'profile.jpg' with your actual image file path */}
+              <img src={backendImg} alt="profile" />
+            </div>
+
           </div>
-          
-          {/* IMAGE REMOVED HERE */}
         </section>
 
-        {/* Favorites Section */}
-        <section className="favorites" id="favorites">
-          <h2 className="heading">Favorites: Singer & Song</h2>
-          <div className="wrapper">
-            {[
-              { name: "Taylor Swift", song: "Back To December", img: "/img/taylor.jpg" },
-              { name: "Olivia Rodrigo", song: "All i want", img: "/img/olivia.jpg" },
-              { name: "Over October", song: "Sandali Lang", img: "/img/overoctober.jpg" },
-              { name: "The Ridleys", song: "Milkyway", img: "/img/ridleys.jpg" },
-              { name: "Kenaniah", song: "Study First", img: "/img/ken.jpg" }
-            ].map((fav, index) => (
-              <div className="favorites-item" key={index}>
-                <img src={fav.img} alt={fav.name} />
-                <h2>{fav.name}</h2>
-                <div className="rating">
-                  {[...Array(5)].map((_, i) => <i key={i} className="bx bxs-star"></i>)}
-                </div>
-                <p>{fav.song}</p>
+        {/* Favorites Section: Short Overview */}
+        <section className="favorites" id="favorites" >
+          <h2 className="heading"><span>Favorites</span> & Interests</h2>
+          <div className="favorites-overview-container">
+            
+            {/* Card 1: Professional */}
+            <div className="fav-category-card " >
+              <Link to="/aboutme">
+              <div className="card-header">
+                <i className='bx bx-briefcase'></i>
+                <h3>Professional</h3>
               </div>
-            ))}
+              <ul className="fav-list">
+                <li><strong>Tech Stack:</strong> Backend Development</li>
+                <li><strong>Projects Built:</strong> Personal Portfolio</li>
+                <li><strong>Role Focus:</strong> Backend Architecture</li>
+              </ul>
+              </Link>
+            </div>
+
+            {/* Card 2: Tech & Learning */}
+            <div className="fav-category-card">
+              <Link to="/aboutme">
+              <div className="card-header">
+                <i className='bx bx-code-alt'></i>
+                <h3>Tech & Learning</h3>
+              </div>
+              <ul className="fav-list">
+                <li><strong>Framework:</strong> Laravel</li>
+                <li><strong>Development Tool:</strong> Git</li>
+                <li><strong>Fav Language:</strong> JavaScript</li>
+                <li><strong>Database:</strong> MySQL</li>
+                <li><strong>IDE/Editor:</strong> VS Code</li>
+                <li><strong>Learning Platform:</strong> YouTube</li>
+                <li><strong>Want to Learn:</strong> React Native</li>
+              </ul>
+              </Link>
+            </div>
+
+            {/* Card 3: Personal Interest */}
+            <div className="fav-category-card">
+              <Link to="/aboutme">
+              <div className="card-header">
+                <i className='bx bx-heart'></i>
+                <h3>Personal Interest</h3>
+              </div>
+              <ul className="fav-list">
+                <li><strong>Music Genre:</strong> OPM</li>
+                <li><strong>Game:</strong> League of Legends</li>
+                <li><strong>Sports:</strong> Basketball</li>
+                <li><strong>Food:</strong> Pizza</li>
+                <li><strong>Hobby:</strong> Play Guitar</li>
+              </ul>
+              </Link>
+            </div>
+
           </div>
         </section>
 

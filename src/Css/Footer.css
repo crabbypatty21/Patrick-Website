@@ -1,23 +1,168 @@
-/* Footer Section */
-.footer {
+/* Base Footer Styles */
+.portfolio-footer {
+  background: var(--second-bg-color, #1f242d); 
+  color: var(--text-color, #ffffff);
+  padding: 4rem 9% 2rem; /* Matches your original padding */
+}
+
+.portfolio-footer-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
   flex-wrap: wrap;
-  padding: 2rem 9%;
-  background: var(--second-bg-color);
 }
 
-.footer .social a {
-    font-size: 2.5rem;
-    color: var(--text-color);
-    margin-right: 1.5rem;
+.footer-col {
+  flex: 1;
+  min-width: 250px; 
 }
 
-.footer .social a:hover {
-    color: var(--main-color);
+/* --- Column 1: Brand --- */
+.brand-header {
+  margin-bottom: 1.5rem;
 }
 
-.copyright {
+.brand-title h2 {
+  font-size: 2rem;
+  margin: 0 0 0.2rem 0;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.brand-title span {
+  font-size: 1.2rem;
+  color: var(--main-color, #0ef); /* Uses your theme's accent color */
+  font-weight: 600;
+}
+
+.brand-desc {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--main-color);
+  transform: translateY(-3px); /* Adds a slight lift effect on hover */
+}
+
+/* --- Columns 2 & 3: Headings --- */
+.footer-col h3 {
   font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+/* --- Column 2: Quick Links --- */
+.links-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links-col li {
+  margin-bottom: 1.2rem;
+}
+
+.links-col a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  opacity: 0.9;
+}
+
+.links-col a:hover {
+  color: var(--main-color);
+  opacity: 1;
+}
+
+/* --- Column 3: Contact Info --- */
+.contact-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-col li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.contact-col i {
+  font-size: 1.8rem;
+  color: var(--main-color); /* Makes the icons pop with your accent color */
+}
+
+.contact-col a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-col a:hover {
+  color: var(--main-color);
+}
+
+/* --- Bottom Copyright Section --- */
+.portfolio-footer-bottom {
+  text-align: center;
+}
+
+.portfolio-footer-bottom hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
+  margin-bottom: 2rem;
+}
+
+.portfolio-footer-bottom p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  opacity: 0.8;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .portfolio-footer-container {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  .footer-col {
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .contact-col li {
+    justify-content: center;
+    flex-direction: column; /* Stacks the icon above the text on mobile */
+    align-items: center;
+    gap: 0.5rem;
+  }
 }

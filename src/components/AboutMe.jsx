@@ -3,7 +3,14 @@ import React from 'react';
 import '../Css/Homepage.css'; // Imports the dark background settings
 import TopBar from './partials/TopBar';
 import Footer from './partials/Footer';
+
+// import images cos it dont work directly
 import backendImg from '../img/backend.jpg';
+import kenImg from '../img/ken.jpg';
+import oliviaImg from '../img/olivia.jpg';
+import overoctoberImg from '../img/overoctober.jpg';
+import ridleysImg from '../img/ridleys.jpg';
+import taylorImg from '../img/taylor.jpg';
 
 function AboutMe() {
   return (
@@ -27,26 +34,6 @@ function AboutMe() {
             I have worked on various projects ranging from game development to web applications, 
             always striving to deliver high-quality software solutions.
           </p>
-        </div>
-
-        <div className="about-img">
-          <img src={backendImg} alt="Patrick" />
-        </div>
-
-        {/* The Accordion moved here from Homepage */}
-        <div className="accordion">
-          <div className="accordion-item">
-            <button className="accordion-button">Hobbies</button>
-            <div className="content">
-              <p>● Basketball<br />● Gaming<br />● Watching Movies<br />● Playing Guitar<br />● Listening to Music</p>
-            </div>
-          </div>
-          <div className="accordion-item">
-            <button className="accordion-button">Personal Info</button>
-            <div className="content">
-              <p>● Name: Patrick<br />● Age: 20<br />● Location: Philippines</p>
-            </div>
-          </div>
         </div>
       </section>
 
