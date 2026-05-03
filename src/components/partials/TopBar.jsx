@@ -49,7 +49,7 @@ function TopBar() {
               <Link to="/" style={{color: 'inherit'}}>Home</Link> <span className="arrow-down"></span>
             </div>
             <ul className="dropdown-menu">
-              <li onClick={() => handleSectionClick('home')}>Hero Section</li>
+              <li onClick={() => handleSectionClick('home')}>Profile</li>
               <li onClick={() => handleSectionClick('about')}>About Overview</li>
               <li onClick={() =>XYSectionClick('services')}>Skills</li>
             </ul>

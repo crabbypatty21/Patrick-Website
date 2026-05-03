@@ -97,8 +97,8 @@ function Homepage() {
                 <h3>Professional</h3>
               </div>
               <ul className="fav-list">
-                <li><strong>Tech Stack:</strong> Backend Development</li>
-                <li><strong>Projects Built:</strong> Personal Portfolio</li>
+                <li><strong>Tech Stack:</strong> Full Stack</li>
+                <li><strong>Projects Built:</strong> Little Lions SPED School Monitoring System</li>
                 <li><strong>Role Focus:</strong> Backend Architecture</li>
               </ul>
               </Link>
@@ -112,7 +112,7 @@ function Homepage() {
                 <h3>Tech & Learning</h3>
               </div>
               <ul className="fav-list">
-                <li><strong>Framework:</strong> Laravel</li>
+                <li><strong>Framework:</strong> React</li>
                 <li><strong>Development Tool:</strong> Git</li>
                 <li><strong>Fav Language:</strong> JavaScript</li>
                 <li><strong>Database:</strong> MySQL</li>
