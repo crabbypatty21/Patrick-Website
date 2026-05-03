@@ -12,7 +12,7 @@ function Footer() {
           <div className="brand-header">
             <div className="brand-title">
               <h2>John Patrick Ignacio</h2>
-              <span>Front-End Web Developer</span>
+              <span>Full Stack Web Developer</span>
             </div>
           </div>
           <p className="brand-desc">
@@ -56,11 +56,11 @@ function Footer() {
             </li>
             <li>
               <i className='bx bx-envelope'></i>
-              <a href="mailto:your.email@example.com" className="email-link">your.email@example.com</a>
+              <a href="mailto:johnpatrickignacio3000@gmail.com" className="email-link">johnpatrickignacio3000@gmail.com</a>
             </li>
             <li>
               <i className='bx bx-phone'></i>
-              <span>+63 900 000 0000</span>
+              <span>+63 962 440 7449</span>
             </li>
           </ul>
         </div>
