@@ -4,6 +4,7 @@ import Homepage from './components/Homepage.jsx';
 import AboutMe from './components/AboutMe.jsx';
 import ScrollToTop from './components/partials/ScrollToTop.jsx'; // 1. Import it here
 import './App.css';
+import SkillDetail from './components/SkillDetail';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/aboutme" element={<AboutMe />} />
+        <Route path="/skills/:skillId" element={<SkillDetail />} />
       </Routes>
     </Router>
   )

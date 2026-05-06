@@ -56,11 +56,9 @@ function TopBar() {
           </li>
           
           {/* New About Me Link */}
-          <li>
-            <Link to="/aboutme" style={{color: 'inherit'}}>About Me</Link>
-          </li>
-
-          <li>School Projects</li>
+          <li><Link to="/aboutme" style={{color: 'inherit'}}>About Me</Link></li>
+          {/* Linked to your "Activities" section ID */}
+          <li onClick={() => handleSectionClick('Activities')} style={{ cursor: 'pointer' }}>Projects</li>
           <li>Work Experience</li>
           <li onClick={() => handleSectionClick('contact')}>Contact</li>
         </ul>

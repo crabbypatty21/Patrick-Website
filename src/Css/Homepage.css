@@ -401,8 +401,6 @@ section:nth-of-type(even) {
    Technologies Used Section Styles
    ========================================= */
 .technologies-section {
-  background-color: #131B21;
-  color: #ffffff;
   font-family: 'Geist', sans-serif;
   padding: 40px 20px;
   border-radius: 12px;
@@ -449,26 +447,27 @@ section:nth-of-type(even) {
   color: #e2e8f0;
 }
 
-.tech-category ul {
+/* Updated List Styles for Logos */
+.tech-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.tech-category ul li {
-  margin-bottom: 10px;
+.tech-list li {
+  display: flex;
+  align-items: center; /* Aligns the logo and text vertically */
+  margin-bottom: 12px;
   font-size: 0.95rem;
   color: #cbd5e1;
-  position: relative;
-  padding-left: 15px;
 }
 
-/* Adds a small subtle bullet point for better readability */
-.tech-category ul li::before {
-  content: '▹';
-  position: absolute;
-  left: 0;
-  color: #64748b;
+/* New Logo Constraints */
+.tech-logo {
+  width: 22px;  /* Keeps the SVG nice and contained */
+  height: 22px; 
+  margin-right: 12px; /* Spaces the logo away from the text */
+  object-fit: contain; /* Prevents stretching */
 }
 
 
@@ -662,7 +661,6 @@ section:nth-of-type(even) {
    Skills Section Styles
    ========================================= */
 .skills-section {
-  background-color: #131B21;
   color: #ffffff;
   font-family: 'Geist', sans-serif;
   /* Using padding instead of margin to prevent background gaps */
