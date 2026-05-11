@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../Css/Homepage.css';
 import TopBar from './partials/TopBar';
 import Footer from './partials/Footer';
-import { SKILLS_DATA } from './partials/skillsData';
+import { SKILLS_DATA } from './partials/skillsdata';
 
 // import images cos it dont work directly
 import backendImg from '../img/backend.jpg';
