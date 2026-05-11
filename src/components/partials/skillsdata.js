@@ -18,19 +18,7 @@ export const SKILLS_DATA = {
       { name: 'Vercel', icon: 'https://cdn.simpleicons.org/vercel/ffffff' }, // White icon for dark bg
       { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' }
     ]
-  },
-  'ui-ux': {
-    title: 'UI/UX Design',
-    icon: 'bx-palette',
-    shortDesc: 'I can design User Interfaces and other Visuals.',
-    fullDesc: 'I focus on creating intuitive, user-centered designs. I use modern CSS frameworks like Tailwind and Bootstrap to ensure that interfaces are not only beautiful but also responsive and accessible.',
-    projects: ['Little Lions Academy UI', 'Santiago-Amancio Dental Clinic System'],
-    tools: [
-      { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
-      { name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg' },
-      { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg' }
-    ]
-  },
+  },    
   'game-development': {
     title: 'Game Development',
     icon: 'bx-android',

@@ -307,16 +307,65 @@ function Homepage() {
         </div>
       </section>
 
-        {/* Contact Section */}
-        <section className="contact" id="contact">
-          <h2 className="heading">Contact <span>Me</span></h2>
-          <form action="#" onSubmit={(e) => e.preventDefault()}>
-            <div className="input-box"><input type="text" placeholder="Full Name" /><input type="email" placeholder="Email Address" /></div>
-            <div className="input-box"><input type="number" placeholder="Phone Number" /><input type="text" placeholder="Email Subject" /></div>
-            <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
-            <button type="submit" className="btn">Submit</button>
-          </form>
-        </section>
+{/* Contact Section */}
+<section className="contact" id="contact">
+  <h2 className="heading">Contact <span>Me</span></h2>
+  
+  {/* The Inviting Subtext & Response Expectation */}
+  <p className="contact-subtext">
+    I'm currently open to new opportunities. Whether you have a question or just want to say hi, my inbox is open and I'll try my best to get back to you within 24 hours!
+  </p>
+
+  <div className="contact-container">
+    
+{/* Left Side: Direct Info, Socials, Resume, & Map */}
+    <div className="contact-info">
+
+            {/* Embedded Map */}
+      <div className="map-container">
+        {/* Replace the 'src' URL with your own Google Maps embed link */}
+        <iframe 
+          title="My Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1690000000000!5m2!1sen!2s" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }} 
+          allowFullScreen="" 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      
+      <div className="info-item">
+        <i className='bx bx-envelope'></i>
+        <span>hello@yourdomain.com</span>
+      </div>
+      
+      {/* Professional Links */}
+      <div className="social-links">
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i className='bx bxl-linkedin'></i></a>
+        <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><i className='bx bxl-github'></i></a>
+        <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter"><i className='bx bxl-twitter'></i></a>
+      </div>
+      
+    </div>
+
+    {/* Right Side: Simplified Form */}
+    <form className="contact-form" action="#" onSubmit={(e) => e.preventDefault()}>
+      {/* Kept only the essential fields */}
+      <div className="input-box">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+      </div>
+      <textarea cols="30" rows="8" placeholder="Your Message" required></textarea>
+      
+      <button type="submit" className="btn submit-btn">
+        Send Message <i className='bx bx-send'></i>
+      </button>
+    </form>
+    
+  </div>
+</section>
 
       </main>
       <Footer />
