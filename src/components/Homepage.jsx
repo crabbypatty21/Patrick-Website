@@ -67,7 +67,7 @@ function Homepage() {
             {/* Left Column: Text and Buttons */}
             <div className="about-content">
               <h2 className="heading">About <span>Me</span></h2>
-              <h3>I'm a <span>Bachelor of Science in Information Technology Graduate</span></h3>
+              <h3>I'm a <span>Bachelor of Science in Information Technology</span></h3>
               <p>
                 I have practical experience in both frontend and backend development. 
                 My foundation in backend architecture was built through extensive case studies and a large-scale capstone project.
@@ -318,15 +318,14 @@ function Homepage() {
 
   <div className="contact-container">
     
-{/* Left Side: Direct Info, Socials, Resume, & Map */}
+    {/* Left Side: Direct Info, Socials, & Map */}
     <div className="contact-info">
 
-            {/* Embedded Map */}
+      {/* Embedded Map pinned to Sta. Maria Bulacan */}
       <div className="map-container">
-        {/* Replace the 'src' URL with your own Google Maps embed link */}
         <iframe 
           title="My Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1690000000000!5m2!1sen!2s" 
+          src="https://maps.google.com/maps?q=49+lote+dulong+bayan,+poblacion+sta.maria+bulacan,+philippines&t=&z=15&ie=UTF8&iwloc=&output=embed" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 
@@ -338,27 +337,44 @@ function Homepage() {
       
       <div className="info-item">
         <i className='bx bx-envelope'></i>
-        <span>hello@yourdomain.com</span>
+        <span>johnpatrickignacio3000@gmail.com</span>
+      </div>
+
+      {/* Pinned Location with Icon */}
+      <div className="info-item">
+        <i className='bx bx-map'></i>
+        <span>49 Lote Dulong Bayan, Poblacion, Sta. Maria, Bulacan, Philippines</span>
       </div>
       
       {/* Professional Links */}
       <div className="social-links">
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i className='bx bxl-linkedin'></i></a>
-        <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><i className='bx bxl-github'></i></a>
+        <a href="https://www.linkedin.com/in/john-patrick-ignacio-4804802b5/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i className='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/crabbypatty21" target="_blank" rel="noreferrer" aria-label="GitHub"><i className='bx bxl-github'></i></a>
         <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter"><i className='bx bxl-twitter'></i></a>
       </div>
       
     </div>
 
-    {/* Right Side: Simplified Form */}
-    <form className="contact-form" action="#" onSubmit={(e) => e.preventDefault()}>
-      {/* Kept only the essential fields */}
+    {/* Right Side: Functional Form using Web3Forms */}
+    <form 
+      className="contact-form" 
+      action="https://api.web3forms.com/submit" 
+      method="POST"
+    >
+      {/* Your integrated Access Key */}
+      <input type="hidden" name="access_key" value="6b11bbef-7494-4ded-b7c9-79d6bda8275b" />
+
       <div className="input-box">
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
+        {/* Required 'name' attributes so Web3Forms properly formats the forwarded email */}
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
       </div>
-      <textarea cols="30" rows="8" placeholder="Your Message" required></textarea>
       
+      <textarea name="message" cols="30" rows="8" placeholder="Your Message" required></textarea>
+      
+      {/* Optional invisible honeypot field to filter out automated spambots */}
+      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
       <button type="submit" className="btn submit-btn">
         Send Message <i className='bx bx-send'></i>
       </button>
@@ -366,11 +382,10 @@ function Homepage() {
     
   </div>
 </section>
-
       </main>
       <Footer />
     </div>
   );
 }
 
-export default Homepage;
+export default Homepage;  

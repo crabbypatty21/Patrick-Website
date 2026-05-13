@@ -51,7 +51,7 @@ function TopBar() {
             <ul className="dropdown-menu">
               <li onClick={() => handleSectionClick('home')}>Profile</li>
               <li onClick={() => handleSectionClick('about')}>About Overview</li>
-              <li onClick={() =>XYSectionClick('services')}>Skills</li>
+              <li onClick={() => handleSectionClick('skills')}>Skills</li>
             </ul>
           </li>
           
@@ -59,7 +59,6 @@ function TopBar() {
           <li><Link to="/aboutme" style={{color: 'inherit'}}>About Me</Link></li>
           {/* Linked to your "Activities" section ID */}
           <li onClick={() => handleSectionClick('Activities')} style={{ cursor: 'pointer' }}>Projects</li>
-          <li>Work Experience</li>
           <li onClick={() => handleSectionClick('contact')}>Contact</li>
         </ul>
       </nav>
