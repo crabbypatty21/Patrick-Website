@@ -165,3 +165,58 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* =========================================
+   RESPONSIVE DESIGN: TABLET (max-width: 1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+  /* Reduce nav padding and gaps to fit links on one line */
+  .top-bar {
+    padding: 0 4%;
+  }
+  .nav-links {
+    gap: 20px;
+  }
+  .nav-links li {
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN: MOBILE (max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  /* Make the top bar taller and stack the logo above links */
+  .top-bar {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 5%;
+    /* Solid background on mobile to prevent overlapping text issues */
+    background-color: #1c1c22; 
+  }
+  
+  .logo {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  /* Wrap navigation links so they don't break the screen width */
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .nav-links li {
+    font-size: 1.1rem;
+  }
+  
+  /* Hide the back-to-top button on very small screens to save space */
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.2rem;
+  }
+}

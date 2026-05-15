@@ -983,3 +983,98 @@ section:nth-of-type(even) {
 .map-container iframe:hover {
   filter: none; 
 }
+
+
+/* =========================================
+   RESPONSIVE DESIGN: TABLET (max-width: 1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+  /* Reduce side padding on smaller screens */
+  section {
+    padding: 8rem 5% 2rem;
+  }
+  
+  /* Hero Section: Stack text and image vertically */
+  .home {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  /* Scale down the massive heading */
+  .home-content h1 {
+    font-size: 4rem; 
+  }
+  
+  /* Center the buttons and social links */
+  .cta-container {
+    justify-content: center; 
+  }
+  
+  /* Shrink the hero image container */
+  .img-border-circle {
+    width: 350px;
+    height: 350px;
+  }
+
+  /* Stats Section: Allow items to wrap nicely */
+  .stats-container {
+    padding: 3rem 5%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN: MOBILE (max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  /* Further reduce general padding for mobile screens */
+  section {
+    padding: 6rem 5% 2rem;
+  }
+
+  /* Hero Section: Smaller typography */
+  .home-content h1 {
+    font-size: 3rem; 
+  }
+  
+  /* Make the hero image even smaller */
+  .img-border-circle {
+    width: 280px;
+    height: 280px;
+  }
+
+  /* Stats Section: Stack stat items vertically */
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  /* About Section: Ensure it stacks (overriding existing desktop rules) */
+  .about-container {
+    flex-direction: column-reverse;
+  }
+  .about-content {
+    padding-right: 0;
+    text-align: center;
+  }
+  .button-group {
+    justify-content: center;
+  }
+
+  /* Contact Section: Stack input fields vertically */
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .contact .input-box {
+    flex-direction: column;
+  }
+  .contact {
+    padding: 40px 20px;
+  }
+}
