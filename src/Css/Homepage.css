@@ -986,38 +986,32 @@ section:nth-of-type(even) {
 
 
 /* =========================================
-   RESPONSIVE DESIGN: TABLET (max-width: 1024px)
+   RESPONSIVE DESIGN: TABLET & MOBILE
    ========================================= */
 @media (max-width: 1024px) {
-  /* Reduce side padding on smaller screens */
   section {
     padding: 8rem 5% 2rem;
   }
-  
-  /* Hero Section: Stack text and image vertically */
   .home {
-    flex-direction: column;
+    flex-direction: column-reverse; /* Puts the image above the text */
     text-align: center;
     gap: 3rem;
   }
-  
-  /* Scale down the massive heading */
   .home-content h1 {
     font-size: 4rem; 
   }
-  
-  /* Center the buttons and social links */
   .cta-container {
     justify-content: center; 
   }
-  
-  /* Shrink the hero image container */
-  .img-border-circle {
+  /* Properly scale the rotating SVG and image */
+  .img-border-wrapper {
     width: 350px;
     height: 350px;
   }
-
-  /* Stats Section: Allow items to wrap nicely */
+  .inner-img {
+    width: 290px;
+    height: 290px;
+  }
   .stats-container {
     padding: 3rem 5%;
     flex-wrap: wrap;
@@ -1030,31 +1024,63 @@ section:nth-of-type(even) {
    RESPONSIVE DESIGN: MOBILE (max-width: 768px)
    ========================================= */
 @media (max-width: 768px) {
-  /* Further reduce general padding for mobile screens */
   section {
-    padding: 6rem 5% 2rem;
+    padding: 6rem 5% 2rem; /* Adjusted top padding */
   }
 
-  /* Hero Section: Smaller typography */
+  /* --- Text Shrinking --- */
   .home-content h1 {
-    font-size: 3rem; 
+    font-size: 2.2rem; /* Shrunk from 5rem */
+    margin-bottom: 1rem;
+  }
+  .software-label {
+    font-size: 1rem;
+  }
+  .home-content p {
+    font-size: 0.95rem; /* Smaller paragraph text */
+    margin-bottom: 1.5rem;
   }
   
-  /* Make the hero image even smaller */
-  .img-border-circle {
-    width: 280px;
-    height: 280px;
+  /* --- Image Circle Shrinking --- */
+  .img-border-wrapper {
+    width: 220px; /* Shrunk considerably */
+    height: 220px;
+  }
+  .inner-img {
+    width: 180px; 
+    height: 180px;
   }
 
-  /* Stats Section: Stack stat items vertically */
+  /* --- Button Shrinking --- */
+  .cta-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .btn-outline, .btn-solid {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .social-media-minimal a {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  /* --- Stats Shrinking --- */
   .stats-container {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 2rem 5%;
+  }
+  .stat-item h2 {
+    font-size: 2.5rem;
+  }
+  .stat-item p {
+    font-size: 0.9rem;
   }
 
-  /* About Section: Ensure it stacks (overriding existing desktop rules) */
+  /* Layout stacking */
   .about-container {
     flex-direction: column-reverse;
   }
@@ -1065,16 +1091,11 @@ section:nth-of-type(even) {
   .button-group {
     justify-content: center;
   }
-
-  /* Contact Section: Stack input fields vertically */
   .contact-container {
     flex-direction: column;
     gap: 40px;
   }
   .contact .input-box {
     flex-direction: column;
-  }
-  .contact {
-    padding: 40px 20px;
   }
 }

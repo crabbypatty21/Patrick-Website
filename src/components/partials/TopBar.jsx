@@ -7,6 +7,7 @@ import Personal_logo from '../../img/pat_logo.png';
 function TopBar() {
   const [scrolled, setScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu state
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -20,6 +21,7 @@ function TopBar() {
   }, []);
 
   const handleSectionClick = (id) => {
+    setIsMobileMenuOpen(false); // Close menu when a link is clicked
     if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
@@ -36,6 +38,10 @@ function TopBar() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <>
       <nav className={`top-bar ${scrolled ? 'scrolled' : ''}`}>
@@ -43,10 +49,18 @@ function TopBar() {
           <img src={Personal_logo} alt="personal logo" className="logo-img" />
           Patrick
         </div>
-        <ul className="nav-links">
+
+        {/* Hamburger Icon */}
+        <div className={`menu-icon ${isMobileMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+
+        <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
           <li className="dropdown">
             <div className="dropdown-trigger">
-              <Link to="/" style={{color: 'inherit'}}>Home</Link> <span className="arrow-down"></span>
+              <Link to="/" style={{color: 'inherit'}} onClick={() => setIsMobileMenuOpen(false)}>Home</Link> <span className="arrow-down"></span>
             </div>
             <ul className="dropdown-menu">
               <li onClick={() => handleSectionClick('home')}>Profile</li>
@@ -55,9 +69,7 @@ function TopBar() {
             </ul>
           </li>
           
-          {/* New About Me Link */}
-          <li><Link to="/aboutme" style={{color: 'inherit'}}>About Me</Link></li>
-          {/* Linked to your "Activities" section ID */}
+          <li><Link to="/aboutme" style={{color: 'inherit'}} onClick={() => setIsMobileMenuOpen(false)}>About Me</Link></li>
           <li onClick={() => handleSectionClick('Activities')} style={{ cursor: 'pointer' }}>Projects</li>
           <li onClick={() => handleSectionClick('contact')}>Contact</li>
         </ul>
@@ -72,13 +84,6 @@ function TopBar() {
       </button>
     </>
   );
-}
-
-// Helper to handle the typo in my previous thought block: 'XYSectionClick' isn't real, 
-// using the correct handler below for the final code block.
-function TopBarFinal() {
-    // ... (logic same as above)
-    // Just ensure the onClick uses handleSectionClick('services')
 }
 
 export default TopBar;

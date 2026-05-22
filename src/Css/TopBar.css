@@ -167,10 +167,9 @@ html {
 }
 
 /* =========================================
-   RESPONSIVE DESIGN: TABLET (max-width: 1024px)
+   RESPONSIVE DESIGN: TABLET & MOBILE
    ========================================= */
 @media (max-width: 1024px) {
-  /* Reduce nav padding and gaps to fit links on one line */
   .top-bar {
     padding: 0 4%;
   }
@@ -182,36 +181,96 @@ html {
   }
 }
 
+/* --- Hamburger Menu Icon --- */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001; /* Keep above the sliding menu */
+}
+
+.menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #F9F6EE;
+  transition: all 0.3s ease;
+}
+
 /* =========================================
    RESPONSIVE DESIGN: MOBILE (max-width: 768px)
    ========================================= */
 @media (max-width: 768px) {
-  /* Make the top bar taller and stack the logo above links */
   .top-bar {
-    flex-direction: column;
-    height: auto;
-    padding: 15px 5%;
-    /* Solid background on mobile to prevent overlapping text issues */
-    background-color: #1c1c22; 
+    position: relative;
+    display: flex;
+    flex-direction: row; /* Keeps logo and burger side-by-side */
+    justify-content: space-between; /* Pushes them to opposite edges */
+    align-items: center;
+    height: 70px;
+    padding: 0 5%;
+    background-color: #131B21; 
   }
-  
+
   .logo {
-    margin-top: 0;
-    margin-bottom: 15px;
+    margin: 0; /* Reset margins so it aligns perfectly with the burger */
   }
-  
-  /* Wrap navigation links so they don't break the screen width */
+
+  /* Show the burger icon */
+  .menu-icon {
+    display: flex; 
+  }
+
+  /* Animate burger icon into an 'X' */
+  .menu-icon.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-icon.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-icon.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Slide-out Menu */
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    position: absolute;
+    top: 70px; /* Right below the top bar */
+    left: -100%; /* Hidden off-screen to the left */
+    width: 100%;
+    height: 100vh;
+    background-color: #1c1c22;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    gap: 2rem;
+    transition: left 0.3s ease; /* Slide animation */
   }
-  
+
+  .nav-links.active {
+    left: 0; /* Slides the menu in */
+  }
+
   .nav-links li {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  /* Clean up the dropdown on mobile */
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
   }
   
-  /* Hide the back-to-top button on very small screens to save space */
   .back-to-top {
     width: 40px;
     height: 40px;
